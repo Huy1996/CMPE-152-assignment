@@ -1,0 +1,31 @@
+PROGRAM
+BEGIN Begin BeGiN
+END break const constructor
+continue destructor function goto
+if else in inline interface label
+mod nil mil not object of on operator
+record repeat set shl shr
+a b c
+123 2 35 12.5 23.5
+12.2a
++ -= - += / /= * *= = := : < <> <= > >=
+^ ; , ( (* ) a [ ] (* *) { } ; , @ #
+var string tRue
+>=<==:=<>**=//=
+'a' 'b' 'c'
+'Hello'
+'hell
+>=
+
+
+Hello world
+begin begins BEGIN Begin BeGiN
+'Hello, world.'
+''
+'A' 'B' ''
++ - * / := . , ; : = <> < <= >= > ( ) [ ] { } } ^ ..
++-:=<>=<==
+0 1 20 31415926 1
+3.14.1
+HUH?
+PLEASE!
