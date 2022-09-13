@@ -2,8 +2,8 @@
 // Created by Huy Duong on 9/1/22.
 //
 
-#ifndef CMPE152_ASSIGNMENT2_SOURCE_H
-#define CMPE152_ASSIGNMENT2_SOURCE_H
+#ifndef TEAM5_ASSIGNMENT2_SOURCE_H
+#define TEAM5_ASSIGNMENT2_SOURCE_H
 
 #include <iostream>
 #include <fstream>
@@ -24,7 +24,7 @@ private:
 public:
     static const char EOL = '\n';
 
-    Source(string sourceFileName) : line_number(0), line(""), line_pos(-1), currentCh(0)
+    Source(string sourceFileName) : line_number(1), line(""), line_pos(-1), currentCh(0)
     {
         source.open(sourceFileName);
 
@@ -60,4 +60,4 @@ public:
 };
 
 
-#endif //CMPE152_ASSIGNMENT2_SOURCE_H
+#endif //TEAM5_ASSIGNMENT2_SOURCE_H

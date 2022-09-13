@@ -2,8 +2,8 @@
 // Created by Huy Duong on 9/1/22.
 //
 
-#ifndef CMPE152_ASSIGNMENT2_SCANNER_H
-#define CMPE152_ASSIGNMENT2_SCANNER_H
+#ifndef TEAM5_ASSIGNMENT2_SCANNER_H
+#define TEAM5_ASSIGNMENT2_SCANNER_H
 
 #include "Source.h"
 #include "Token.h"
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //CMPE152_ASSIGNMENT2_SCANNER_H
+#endif //TEAM5_ASSIGNMENT2_SCANNER_H

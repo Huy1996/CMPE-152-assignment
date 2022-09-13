@@ -1,0 +1,15 @@
+# ninja log v5
+1	1224	1663047500534473420	CMakeFiles/Team5_Assignment2.dir/frontend/Scanner.cpp.o	e9f5a941b66f8fba
+1	1239	1663047500550164229	CMakeFiles/Team5_Assignment2.dir/frontend/Token.cpp.o	7e75139ae90a0781
+2	1288	1663047818848881195	CMakeFiles/Team5_Assignment2.dir/main_parser.cpp.o	8d1ecdd1569fc38e
+3	1406	1663047818968258743	CMakeFiles/Team5_Assignment2.dir/frontend/Parser.cpp.o	ea4dbd541b8e131a
+4	1203	1663047818760153212	CMakeFiles/Team5_Assignment2.dir/intermediate/TreeWalker.cpp.o	ee4c3e4e5a7a352f
+1406	1487	1663047819055593980	Team5_Assignment2	3a6b093b5e308fd5
+0	1107	1663048238102215169	CMakeFiles/test.dir/main.cpp.o	83ba49af17753160
+1107	1181	1663048238182450779	test	51014dfa06c12f25
+2	887	1663048260702624105	CMakeFiles/Team5_Assignment2.dir/intermediate/TreeWalker.cpp.o	ee4c3e4e5a7a352f
+1	908	1663048260724022100	CMakeFiles/Team5_Assignment2.dir/frontend/Token.cpp.o	7e75139ae90a0781
+1	958	1663048260774209902	CMakeFiles/Team5_Assignment2.dir/frontend/Scanner.cpp.o	e9f5a941b66f8fba
+1	1155	1663048260969127696	CMakeFiles/Team5_Assignment2.dir/main_parser.cpp.o	8d1ecdd1569fc38e
+2	1293	1663048261110012794	CMakeFiles/Team5_Assignment2.dir/frontend/Parser.cpp.o	ea4dbd541b8e131a
+1293	1363	1663048261183214316	Team5_Assignment2	3a6b093b5e308fd5

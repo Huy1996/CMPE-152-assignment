@@ -3,15 +3,15 @@
 //
 
 #include "Token.h"
-#include <algorithm>
+// #include <algorithm>
 
-string toUpperCase(string text){
-    string to_return;
-    for (int i = 0; i < text.length(); i++) {
-        to_return += toupper(text[i]);
-    }
-    return to_return;
-}
+// string toUpperCase(string text){
+//     string to_return;
+//     for (int i = 0; i < text.length(); i++) {
+//         to_return += toupper(text[i]);
+//     }
+//     return to_return;
+// }
 
 const int Token::matrix[row][col] = {
         /*        letter digit  +     -    .    E    *    /    :    <    >    =    ^    ;    ,    (    )    [    ]    {    }   \n    '  EOF  other */
@@ -23,11 +23,11 @@ const int Token::matrix[row][col] = {
         /*  5 */ { ERR,    7,	6,	  6, ERR, ERR, ERR, ERR, ERR, ERR, ERR,	ERR, ERR, ERR, ERR,	ERR, ERR, ERR, ERR,	ERR, ERR, ERR, ERR, ERR,	ERR },
         /*  6 */ { ERR,	   7, ERR,	ERR, ERR, ERR, ERR,	ERR, ERR, ERR, ERR,	ERR, ERR, ERR, ERR,	ERR, ERR, ERR, ERR,	ERR, ERR, ERR, ERR, ERR,	ERR },
         /*  7 */ {  -3,    7,  -3,	 -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,  -3,    -3  },
-        /*  8 */ {  -4,    2,  -4,   -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  26,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,    -4  },
-        /*  9 */ {  -5,    2,  -5,   -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  27,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,    -5  },
+        /*  8 */ {  -4,   -4,  -4,   -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  26,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,  -4,    -4  },
+        /*  9 */ {  -5,   -5,  -5,   -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  27,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,  -5,    -5  },
         /* 10 */ {  -6,   -6,  -6,   -6,  -6,  -6,  -6,  -6,  -6,  -6,  -6,  32,  -6,  -6,  -6,  -6, -29,  -6,  -6,  -6,  -6,  -6,  -6,  -6,    -6  },
         /* 11 */ {  -7,   -7,  -7,   -7,  -7,  -7,  -7,  -7,  -7,  -7,  -7,  33,  -7,  -7,  -7,  -7,  -7,  -7,  -7,  -7,  -7,  -7,  -7,  -7,    -7  },
-        /* 12 */ { ERR,  ERR, ERR,  ERR, ERR, ERR, ERR, ERR, ERR, ERR, ERR,  34, ERR, ERR, ERR, ERR, ERR, ERR, ERR, ERR, ERR, ERR, ERR, ERR,    ERR },
+        /* 12 */ { -34,  -34, -34,  -34, -34, -34, -34, -34, -34, -34, -34,  34, -34, -34, -34, -34, -34, -34, -34, -34, -34, -34, -34, -34,    -34 },
         /* 13 */ { -13,  -13, -13,  -13, -13, -13, -13, -13, -13, -13,  28,  29, -13, -13, -13, -13, -13, -13, -13, -13, -13, -13, -13, -13,    -13 },
         /* 14 */ { -14,  -14, -14,  -14, -14, -14, -14, -14, -14, -14, -14,  30, -14, -14, -14, -14, -14, -14, -14, -14, -14, -14, -14, -14,    -14 },
         /* 15 */ { -22,  -22, -22,  -22, -22, -22,  20, -22, -22, -22, -22, -22, -22, -22, -22, -22, -22, -22, -22, -22, -22, -22, -22, -22,    -22 },
@@ -61,14 +61,14 @@ const int Token::matrix[row][col] = {
 
 };
 
-const string Token::token_type[33] = {
-        "IDENTIFIER", "INTERGER", "REAL", "PLUSOP", "MINUSOP", "MULTOP", "DIVOP", "ASSIGN", "EQUAL",
+const string Token::token_type[34] = {
+        "IDENTIFIER", "INTEGER", "REAL", "PLUSOP", "MINUSOP", "MULTOP", "DIVOP", "ASSIGN", "EQUAL",
         "NE", "LTEQ", "GTEQ", "LT", "GT", "PLUSEQUAL", "MINUSEQUAL", "MULTEQUAL", "DIVEQUAL", "CARAT",
-        "SEMICOLOR", "COMMA", "LPAREN", "RPAREN", "LBRACKET", "RBRACKET", "LBRACE", "RBRACE", "LCOMMENT",
-        "RCOMMENT", "CHARACTER", "STRING", "DOTDOT", "END_OF_FILE"
+        "SEMICOLON", "COMMA", "LPAREN", "RPAREN", "LBRACKET", "RBRACKET", "LBRACE", "RBRACE", "LCOMMENT",
+        "RCOMMENT", "CHARACTER", "STRING", "DOTDOT", "END_OF_FILE", "COLON"
 };
 
-const string Token::reserved_word[55] = {
+const string Token::reserved_word[57] = {
         "PROGRAM", "BEGIN", "END", "REPEAT", "UNTIL",
         "DIV", "MOD", "AND", "OR", "NOT", "ARRAY",
         "CONST", "TYPE", "VAR", "PROCEDURE", "FUNCTION",
@@ -78,7 +78,7 @@ const string Token::reserved_word[55] = {
         "FALSE", "FILE", "IDENTIFIER", "STRING", "GOTO",
         "IN", "INLINE", "INTERFACE", "LABEL", "NIL", "OBJECT", "ON",
         "OPERATOR", "PACKED", "RECORD", "SET", "SHL", "SHR",
-        "TRUE", "UNIT", "USES", "WITH", "XOR"
+        "TRUE", "UNIT", "USES", "WITH", "XOR", "WRITE", "WRITELN"
 };
 
 const map<char, int> Token::char_type = {
@@ -140,7 +140,7 @@ string Token::get_token_type() {
     if (state == -1){
         string upper = toUpperCase(text);
         bool found = false;
-        for (int i=0; i<55; i++){
+        for (int i=0; i<57; i++){
             if(upper.compare(reserved_word[i]) == 0) { found = true; break;}
         }
         if (found)

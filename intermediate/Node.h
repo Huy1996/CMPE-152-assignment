@@ -36,10 +36,11 @@ public:
     string text;
     SymtabEntry *entry;
     int value;
+    string string_value;
     vector<Node *> node_container;
 
     Node(NodeType type)
-            : type(type), lineNumber(0), entry(nullptr) {}
+            : type(type), lineNumber(1), entry(nullptr) {}
 
     void adopt(Node *node) { node_container.push_back(node); }
 };

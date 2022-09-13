@@ -8,7 +8,6 @@
 Token *Scanner::next_token() {
 
     char ch = next_available_char();
-    //while(isspace(ch)) ch = source->nextChar();
 
     Token* token = new Token(source->lineNumber());
 
