@@ -4,7 +4,7 @@
 #include "frontend/Parser.h"
 #include "intermediate/Node.h"
 #include "intermediate/TreeWalker.h"
-
+#define DEBUG
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -23,10 +23,25 @@ int main(int argc, char *argv[]) {
     cout << "\t\tFitzgerald, Daniel" << endl << endl;
 
     Scanner *scanner = new Scanner(source);  // create the scanner
+#ifdef DEBUG
+    cout << "Scanner created" << endl;
+#endif
+
     Symtab *symtab = new Symtab();
+#ifdef DEBUG
+    cout << "Symtab created" << endl;
+#endif
     
     Parser *parser = new Parser(scanner, symtab);
+#ifdef DEBUG
+    cout << "Parser created" << endl;
+#endif
+
     Node *program = parser->parseProgram();
+#ifdef DEBUG
+    cout << "Parser Program successful" << endl;
+#endif
+
     int error = parser->get_error();
 
     if(error == 0){

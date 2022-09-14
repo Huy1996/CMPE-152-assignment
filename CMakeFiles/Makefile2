@@ -63,8 +63,8 @@ CMAKE_BINARY_DIR = "/Users/huyduong/Downloads/Team5-Assignment2 "
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/test.dir/all
-all: CMakeFiles/Team5_Assignment2.dir/all
+all: CMakeFiles/Team5_Assignment2_Scanner.dir/all
+all: CMakeFiles/Team5_Assignment2_Parser.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,61 +72,61 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/test.dir/clean
-clean: CMakeFiles/Team5_Assignment2.dir/clean
+clean: CMakeFiles/Team5_Assignment2_Scanner.dir/clean
+clean: CMakeFiles/Team5_Assignment2_Parser.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test.dir
+# Target rules for target CMakeFiles/Team5_Assignment2_Scanner.dir
 
 # All Build rule for target.
-CMakeFiles/test.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles" --progress-num=7,8 "Built target test"
-.PHONY : CMakeFiles/test.dir/all
+CMakeFiles/Team5_Assignment2_Scanner.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Team5_Assignment2_Scanner.dir/build.make CMakeFiles/Team5_Assignment2_Scanner.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Team5_Assignment2_Scanner.dir/build.make CMakeFiles/Team5_Assignment2_Scanner.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles" --progress-num=7,8,9,10 "Built target Team5_Assignment2_Scanner"
+.PHONY : CMakeFiles/Team5_Assignment2_Scanner.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles" 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
+CMakeFiles/Team5_Assignment2_Scanner.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles" 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Team5_Assignment2_Scanner.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles" 0
-.PHONY : CMakeFiles/test.dir/rule
+.PHONY : CMakeFiles/Team5_Assignment2_Scanner.dir/rule
 
 # Convenience name for target.
-test: CMakeFiles/test.dir/rule
-.PHONY : test
+Team5_Assignment2_Scanner: CMakeFiles/Team5_Assignment2_Scanner.dir/rule
+.PHONY : Team5_Assignment2_Scanner
 
 # clean rule for target.
-CMakeFiles/test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
-.PHONY : CMakeFiles/test.dir/clean
+CMakeFiles/Team5_Assignment2_Scanner.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Team5_Assignment2_Scanner.dir/build.make CMakeFiles/Team5_Assignment2_Scanner.dir/clean
+.PHONY : CMakeFiles/Team5_Assignment2_Scanner.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Team5_Assignment2.dir
+# Target rules for target CMakeFiles/Team5_Assignment2_Parser.dir
 
 # All Build rule for target.
-CMakeFiles/Team5_Assignment2.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Team5_Assignment2.dir/build.make CMakeFiles/Team5_Assignment2.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Team5_Assignment2.dir/build.make CMakeFiles/Team5_Assignment2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles" --progress-num=1,2,3,4,5,6 "Built target Team5_Assignment2"
-.PHONY : CMakeFiles/Team5_Assignment2.dir/all
+CMakeFiles/Team5_Assignment2_Parser.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Team5_Assignment2_Parser.dir/build.make CMakeFiles/Team5_Assignment2_Parser.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Team5_Assignment2_Parser.dir/build.make CMakeFiles/Team5_Assignment2_Parser.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles" --progress-num=1,2,3,4,5,6 "Built target Team5_Assignment2_Parser"
+.PHONY : CMakeFiles/Team5_Assignment2_Parser.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Team5_Assignment2.dir/rule: cmake_check_build_system
+CMakeFiles/Team5_Assignment2_Parser.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles" 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Team5_Assignment2.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Team5_Assignment2_Parser.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles" 0
-.PHONY : CMakeFiles/Team5_Assignment2.dir/rule
+.PHONY : CMakeFiles/Team5_Assignment2_Parser.dir/rule
 
 # Convenience name for target.
-Team5_Assignment2: CMakeFiles/Team5_Assignment2.dir/rule
-.PHONY : Team5_Assignment2
+Team5_Assignment2_Parser: CMakeFiles/Team5_Assignment2_Parser.dir/rule
+.PHONY : Team5_Assignment2_Parser
 
 # clean rule for target.
-CMakeFiles/Team5_Assignment2.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Team5_Assignment2.dir/build.make CMakeFiles/Team5_Assignment2.dir/clean
-.PHONY : CMakeFiles/Team5_Assignment2.dir/clean
+CMakeFiles/Team5_Assignment2_Parser.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Team5_Assignment2_Parser.dir/build.make CMakeFiles/Team5_Assignment2_Parser.dir/clean
+.PHONY : CMakeFiles/Team5_Assignment2_Parser.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

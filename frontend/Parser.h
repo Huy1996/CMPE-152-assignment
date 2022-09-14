@@ -14,7 +14,8 @@ using namespace std;
 
 class Parser{
 public:
-    Parser(Scanner *scanner, Symtab *symtab): scanner(scanner), symtab(symtab), current_token(nullptr), line_number(0), error_count(0){}
+    Parser(Scanner *scanner, Symtab *symtab): scanner(scanner), symtab(symtab),
+        current_token(nullptr), line_number(0), error_count(0){}
     int get_error(){ return error_count; }
     Node *parseProgram();
 

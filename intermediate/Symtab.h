@@ -3,7 +3,15 @@
 
 #include <string>
 #include <map>
+#include <iostream>
+
+using namespace std;
 #include "SymtabEntry.h"
+
+//struct Variable{
+//    string variable_name;
+//    int value;
+//};
 
 class Symtab{
 private:

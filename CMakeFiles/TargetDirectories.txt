@@ -1,4 +1,4 @@
 /Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles/rebuild_cache.dir
 /Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles/edit_cache.dir
-/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles/test.dir
-/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles/Team5_Assignment2.dir
+/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles/Team5_Assignment2_Scanner.dir
+/Users/huyduong/Downloads/Team5-Assignment2 /CMakeFiles/Team5_Assignment2_Parser.dir

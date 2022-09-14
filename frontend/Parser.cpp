@@ -1,5 +1,5 @@
 #include "Parser.h"
-
+#define DEBUG
 const set<string> Parser::starting_token = {
     "BEGIN", "IDENTIFIER", "REPEAT", "WRITE", "WRITELN", "FOR", "WHILE", "IF", "CASE"
 };
@@ -23,6 +23,10 @@ const set<string> Parser::term_op_token = {
 
 Node *Parser::parseProgram()
 {
+#ifdef DEBUG
+    cout << "Call Parser Program" << endl;
+#endif
+
     Node *programNode = new Node(NodeType::PROGRAM);
 
     current_token = scanner->next_token();  // first token!
@@ -61,7 +65,10 @@ Node *Parser::parseProgram()
 Node *Parser::parseStatement()
 {
 
-    // cout << "Call statement" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Statement" << endl;
+#endif
+
     Node *statement_node = nullptr;
     int savedLineNumber = current_token->get_line_number();
     line_number = savedLineNumber;
@@ -96,7 +103,9 @@ Node *Parser::parseStatement()
 
 Node *Parser::parseAssignmentStatement()
 {
-    // cout << "call := " << endl;
+#ifdef DEBUG
+    cout << "Call Parser Assignment Statement" << endl;
+#endif
     // The current token should now be the left-hand-side variable name.
 
     Node *assignmentNode = new Node(NodeType::ASSIGN);
@@ -130,7 +139,10 @@ Node *Parser::parseAssignmentStatement()
 
 Node *Parser::parseCompoundStatement()
 {
-    // cout << "Call compound" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Compound Statement" << endl;
+#endif
+
     Node *compoundNode = new Node(NodeType::COMPOUND);
     compoundNode->lineNumber = current_token->get_line_number();
 
@@ -149,7 +161,10 @@ Node *Parser::parseCompoundStatement()
 void Parser::parseStatementList(Node *parentNode, string terminalType)
 {
 
-    // cout << "Call statementlist" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Statement List" << endl;
+#endif
+
     while (   (current_token->get_token_type().compare(terminalType) != 0)
            && (current_token->get_token_type().compare("END_OF_FILE") != 0))
     {
@@ -176,7 +191,9 @@ void Parser::parseStatementList(Node *parentNode, string terminalType)
 
 Node *Parser::parseRepeatStatement()
 {
-    // cout << "Call repeat" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Repeat Statement" << endl;
+#endif
     // The current token should now be REPEAT.
 
     // Create a LOOP node.
@@ -206,7 +223,9 @@ Node *Parser::parseRepeatStatement()
 Node *Parser::parseWriteStatement()
 {
     // The current token should now be WRITE.
-    // cout << "Call write" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Write Statement" << endl;
+#endif
 
     // Create a WRITE node-> It adopts the variable or string node.
     Node *writeNode = new Node(NodeType::WRITE);
@@ -224,7 +243,9 @@ Node *Parser::parseWriteStatement()
 Node *Parser::parseWritelnStatement()
 {
     // The current token should now be WRITELN.
-    // cout << "Call writeln" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Writeln Statement" << endl;
+#endif
     // Create a WRITELN node. It adopts the variable or string node.
     Node *writelnNode = new Node(NodeType::WRITELN);
     current_token = scanner->next_token();  // consume WRITELN
@@ -236,7 +257,9 @@ Node *Parser::parseWritelnStatement()
 void Parser::parseWriteArguments(Node *node)
 {
     // The current token should now be (
-    // cout << "Call write arg" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Write Arguments" << endl;
+#endif
 
     bool hasArgument = false;
 
@@ -298,7 +321,9 @@ Node *Parser::parseExpression()
 {
     // The current token should now be an identifier or a number.
 
-    // cout << "Call expression" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Expression" << endl;
+#endif
 
     // The expression's root node->
     Node *exprNode = parseSimpleExpression();
@@ -334,8 +359,9 @@ Node *Parser::parseExpression()
 Node *Parser::parseSimpleExpression()
 {
     // The current token should now be an identifier or a number.
-
-    // cout << "Call simple expression" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Single Expression" << endl;
+#endif
     // The simple expression's root node->
     Node *simpExprNode = parseTerm();
 
@@ -366,7 +392,9 @@ Node *Parser::parseTerm()
 {
     // The current token should now be an identifier or a number.
 
-    // cout << "Call Term" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Term" << endl;
+#endif
     // The term's root node->
     Node *termNode = parseFactor();
 
@@ -396,8 +424,9 @@ Node *Parser::parseTerm()
 Node *Parser::parseFactor()
 {
     // The current token should now be an identifier or a number or (
-
-    // cout << "Call Factor" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Factor" << endl;
+#endif
 
     if      (current_token->get_token_type().compare("IDENTIFIER") == 0) return parseVariable();
     else if (current_token->get_token_type().compare("INTEGER") == 0)    return parseIntegerConstant();
@@ -430,11 +459,11 @@ Node *Parser::parseFactor()
     return nullptr;
 }
 
-Node *Parser::parseVariable()
-{
+Node *Parser::parseVariable() {
     // The current token should now be an identifier.
-
-    // cout << "Call variable" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Variable" << endl;
+#endif
     // Has the variable been "declared"?
     string variableName = current_token->get_text();
     SymtabEntry *variableId = symtab->find_variable(toLowerCase(variableName));
@@ -452,7 +481,9 @@ Node *Parser::parseIntegerConstant()
 {
     // The current token should now be a number.
 
-    // cout << "Call int cont=st" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Integer Constant" << endl;
+#endif
 
     Node *integerNode = new Node(NodeType::INTEGER_CONSTANT);
     integerNode->value = stoi(current_token->get_text());
@@ -465,7 +496,9 @@ Node *Parser::parseIntegerConstant()
  {
      // The current token should now be a number.
 
-     // cout << "Call real double" << endl;
+#ifdef DEBUG
+     cout << "Call Parser Real Constant" << endl;
+#endif
 
      Node *realNode = new Node(NodeType::REAL_CONSTANT);
      realNode->value = stoi(current_token->get_text());
@@ -478,7 +511,9 @@ Node *Parser::parseIntegerConstant()
  {
      // The current token should now be string.
 
-     // cout << "Call string const" << endl;
+#ifdef DEBUG
+     cout << "Call Parser String Constant" << endl;
+#endif
 
      Node *stringNode = new Node(NodeType::STRING_CONSTANT);
      stringNode->string_value = current_token->get_text();
@@ -509,12 +544,13 @@ void Parser::semanticError(string message)
     error_count++;
 }
 
-//added
 
 Node *Parser::parseForStatement()
 {
 
-    // cout << "Call for" << endl;
+#ifdef DEBUG
+    cout << "Call Parser For Statement" << endl;
+#endif
 	Node *forNode = new Node(NodeType::FOR_LOOP);                                         //Create for loop node
     Node *loopNode = new Node(NodeType::LOOP);                                            //Create loop node
 	current_token = scanner->next_token();                                        //consume FOR
@@ -569,7 +605,9 @@ Node *Parser::parseWhileStatement()
     // The current node should now be WHILE
     // Create a LOOP node
 
-    // cout << "Call while" << endl;
+#ifdef DEBUG
+    cout << "Call Parser While Statement" << endl;
+#endif
     Node *loopNode = new Node(NodeType::LOOP);
     current_token = scanner->next_token(); // consume WHILE
 
@@ -604,7 +642,9 @@ Node *Parser::parseWhileStatement()
 Node *Parser::parseIfStatement()
 {
 
-    // cout << "Call if" << endl;
+#ifdef DEBUG
+    cout << "Call Parser If Statement" << endl;
+#endif
     Node *ifNode = new Node(NodeType::CONDITION);
     current_token = scanner->next_token();                               // consume IF
 
@@ -648,7 +688,9 @@ Node *Parser::parseIfStatement()
 Node *Parser::parseNot()                                                //parse for a not statement
 {
 
-    // cout << "Call not" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Not" << endl;
+#endif
     Node *notNode = new Node(NodeType::NOT_NODE);
     current_token = scanner->next_token();
     notNode->adopt(parseExpression());
@@ -657,8 +699,9 @@ Node *Parser::parseNot()                                                //parse 
 
 Node *Parser::parseCaseStatement()
 {
-
-    // cout << "Call case" << endl;
+#ifdef DEBUG
+    cout << "Call Parser Case Statement" << endl;
+#endif
     Node *caseNode = new Node(NodeType::CASE_STATEMENT);
     current_token = scanner->next_token();                        //consume CASE
     caseNode->adopt(parseExpression());
